@@ -52,7 +52,7 @@ public class Professor {
         if (inputDegree != null) {
             degree = inputDegree;
         } else {
-            degree = Degree.other;
+            degree = Degree.dr;
         }
     }
 
@@ -61,7 +61,7 @@ public class Professor {
         setPID();
         setName("Test");
         setSurname("Test");
-        setDegree(Degree.other);
+        setDegree(Degree.mg);
     }
     
     // 5. Argument Constructor
