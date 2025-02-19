@@ -1,40 +1,17 @@
 package model;
 
 public class Professor {
-    // Variables
-    private long pID;
+    // 1. Variables
+    private long pId;
     private String name;
     private String surname;
     private Degree degree;
-
-    private static long counter = 0;
-
-    // Default Constructor
-    public Professor() {
-        this.pID = ++counter;
-        setName("Test");
-        setSurname("Test");
-        setDegree(Degree.other);
-    }
-
-    // Constructor
-    public Professor(long pID, String name, String surname, Degree degree) {
-        this.pID = pID;
-        setName(name);
-        setSurname(surname);
-        setDegree(degree);
-    }
-
-    public Professor(String surname) {
-        this.pID = ++counter;
-        setName("Default");
-        setSurname(surname);
-        setDegree(Degree.other);
-    }
-
-    // Getters
-    public long getpID() {
-        return pID;
+    
+    private static long counter = 10000;
+    
+    // 2. Getters
+    public long getpId() {
+        return pId;
     }
 
     public String getName() {
@@ -48,25 +25,56 @@ public class Professor {
     public Degree getDegree() {
         return degree;
     }
-
-    // Setters
+    
+    // 3. Setters
+    public void setPID() {
+        pId = counter;
+        counter++;
+    }
+    
     public void setName(String inputName) {
-        if (inputName != null && inputName.matches("^[A-Z][a-z]{2,14}$")) {
-            this.name = inputName;
+        if (inputName != null && inputName.matches("[A-Z]{1}[a-z]{3,15}")) {
+            name = inputName;
         } else {
-            this.name = "No name";
+            name = "No name";
         }
     }
-
+    
     public void setSurname(String inputSurname) {
-        if (inputSurname != null && inputSurname.matches("^[A-Z][a-z]{2,29}$")) {
-            this.surname = inputSurname;
+        if (inputSurname != null && inputSurname.matches("[A-Z]{1}[a-z]{3,30}")) {
+            surname = inputSurname;
         } else {
-            this.surname = "No surname";
+            surname = "No surname";
+        }
+    }
+    
+    public void setDegree(Degree inputDegree) {
+        if (inputDegree != null) {
+            degree = inputDegree;
+        } else {
+            degree = Degree.other;
         }
     }
 
-    public void setDegree(Degree degree) {
-        this.degree = (degree != null) ? degree : Degree.other;
+    // 4. Default Constructor
+    public Professor() {
+        setPID();
+        setName("Test");
+        setSurname("Test");
+        setDegree(Degree.other);
+    }
+    
+    // 5. Argument Constructor
+    public Professor(String inputName, String inputSurname, Degree inputDegree) {
+        setPID();
+        setName(inputName);
+        setSurname(inputSurname);
+        setDegree(inputDegree);
+    }
+    
+    // 6. toString Function
+    @Override
+    public String toString() {
+        return pId + ": " + name + " " + surname + " (" + degree + ")";
     }
 }
