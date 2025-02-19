@@ -10,7 +10,7 @@ public class Student {
 
     // 2. Default Constructor
     public Student() {
-        this.stID = ++counter; // Assign a unique ID
+        this.stID = ++counter; 
         setName("Test");
         setSurname("Test");
     }
@@ -42,9 +42,7 @@ public class Student {
     }
 
     // 5. Setters
-    public void setStID(long stID) {
-        this.stID = stID;
-    }
+
 
     public void setName(String inputName) {
         if (inputName != null && inputName.matches("^[A-Z][a-z]{2,14}$")) {
