@@ -16,7 +16,7 @@ public class Mainservice {
         Student st2 = new Student("John", "Green");
         System.out.println(st2);
 
-        Student st3 = new Student("mercy", "launtner"); 
+        Student st3 = new Student("Mecy", "Laune"); 
         System.out.println(st3);
 
         Student st4 = new Student("Alice", "Brown");
@@ -29,7 +29,7 @@ public class Mainservice {
         Professor p2 = new Professor("James", "Smith", Degree.dr);
         System.out.println(p2);
 
-        Professor p3 = new Professor("Martha", "Vim", Degree.mg);
+        Professor p3 = new Professor("Martha", "Vimo", Degree.mg);
         System.out.println(p3);
         
         Course c1 = new Course();

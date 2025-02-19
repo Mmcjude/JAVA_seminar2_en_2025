@@ -24,6 +24,7 @@ public class Professor {
 
     public Degree getDegree() {
         return degree;
+        
     }
     
     // 3. Setters
